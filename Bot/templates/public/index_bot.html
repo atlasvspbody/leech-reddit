@@ -1,0 +1,15 @@
+{% extends "base_bot.html" %}
+{% block title_html %}
+	Bot Control Panel
+{% endblock %}
+{% block h1 %}
+	Bot Control Panel 
+{% endblock %}
+{% block article_content %}
+	<br><a href="{% url 'Bot:create_subreddit' %}">create_subreddit</a>
+	<br><a href="{% url 'Bot:create_rule' %}">create_rule</a>
+	<br><a href="{% url 'Bot:create_alert' %}">create_alert</a>
+	<br><a href="{% url 'Bot:list_alert' %}">list_alert</a>
+	<br><a href="{% url 'Bot:list_rule' %}">list_rule</a>
+	<br><a href="{% url 'Bot:list_subreddit' %}">list_subreddit</a>
+{% endblock %}

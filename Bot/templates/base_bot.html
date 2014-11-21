@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>
+			{% block title_html %}{% endblock %}
+		</title>
+			{% load staticfiles %}
+			<script src="{% static 'javascript/lib/jquery-1.11.1.min.js' %}" type='text/javascript'></script>
+			{% block head %}{% endblock %}
+	</head>
+	<body>
+		<h1>
+			Action{% block h1%}{% endblock%}
+		</h1>
+		<article>
+			{% block article_content %}{% endblock %}
+		</article>
+	</body>
+</html>

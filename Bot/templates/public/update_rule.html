@@ -1,0 +1,16 @@
+{% extends "base_bot.html" %}
+{% block title_html %}
+	update rule
+{% endblock %}
+{% block h1 %}
+	update rule 
+{% endblock %}
+{% block article_content %}
+	<form method="post" action="{% url 'Bot:update_rule' pk %}">
+		{% csrf_token %}
+		<table>
+			{{ form.as_table }}
+		</table>
+		<p><input type="submit" value="Update"/></p>
+	</form>
+{% endblock %}

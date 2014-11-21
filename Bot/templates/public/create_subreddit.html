@@ -1,0 +1,16 @@
+{% extends "base_bot.html" %}
+{% block title_html %}
+	add subreddit
+{% endblock %}
+{% block h1 %}
+	add subreddit 
+{% endblock %}
+{% block article_content %}
+	<form method="post" action="{% url 'Bot:create_subreddit' %}">
+		{% csrf_token %}
+		<table>
+			{{ form.as_table }}
+		</table>
+		<p><input type="submit" value="Add"/></p>
+	</form>
+{% endblock %}
