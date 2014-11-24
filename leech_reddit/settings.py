@@ -88,5 +88,4 @@ TEMPLATE_DIRS = (
 
 STATICFILES_DIRS=(
     os.path.join(PROJECT_PATH, 'Bot', 'static'),
-    os.path.join(PROJECT_PATH, 'static'),
 )
