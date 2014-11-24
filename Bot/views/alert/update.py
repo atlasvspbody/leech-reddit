@@ -3,7 +3,8 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from Bot.models import Alert
 from Bot.views.alert.form import FormAlertUpdate
-
+from django.contrib.auth.decorators import login_required
+@login_required
 def page(request,pk):
     if request.POST:
         form = FormAlertUpdate(request.POST)

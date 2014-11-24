@@ -13,7 +13,7 @@ def page(request):
             if user:
                 login(request, user)
                 if request.GET.get('next') is not None:
-                    return redirect(request.GET.get('next'))
+                    return redirect(request.GET['next'])
                 else:
                     return HttpResponseRedirect(reverse('Bot:index'))
                     
@@ -21,4 +21,4 @@ def page(request):
             return render(request,'public/login_user_bot.html',{'form' : form})
     else:
         form = FormLogin()
-        return render(request,'public/login_user_bot.html',{'form' : form})
+    return render(request,'public/login_user_bot.html',{'form' : form})

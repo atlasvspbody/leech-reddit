@@ -7,7 +7,14 @@
 			<script src="{% static 'javascript/lib/jquery-1.11.1.min.js' %}" type='text/javascript'></script>
 			{% block head %}{% endblock %}
 	</head>
-	<body>
+	<body>	
+	{% if user.is_authenticated %}
+		<h1> hi {{ user }}</h1>
+		<a href="{% url 'Bot:logout_user_bot' %}">exit</a>
+		<a href="{% url 'Bot:index' %}">index</a>
+	{% else %}	
+		<a href="{% url 'Bot:login_user_bot' %}">login</a>
+	{% endif %}
 		<h1>
 			Action{% block h1%}{% endblock%}
 		</h1>

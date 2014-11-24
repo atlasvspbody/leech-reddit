@@ -1,5 +1,6 @@
 from django.views.generic import ListView
 from Bot.models import Alert
+from django.contrib.auth.decorators import login_required
 
 class AlertList(ListView):
     model = Alert
@@ -9,5 +10,6 @@ class AlertList(ListView):
         queryset = Alert.objects.all()
         return queryset
 
+@login_required
 def page(request):
     return AlertList.as_view()(request)

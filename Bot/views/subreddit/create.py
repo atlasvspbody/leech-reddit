@@ -3,7 +3,8 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from Bot.models import SubReddit
 from Bot.views.subreddit.form import FormSubReddit
-
+from django.contrib.auth.decorators import login_required
+@login_required
 def page(request):
     if request.POST:
         form = FormSubReddit(request.POST)
