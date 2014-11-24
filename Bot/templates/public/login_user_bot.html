@@ -1,0 +1,21 @@
+{% extends "base_bot.html" %}
+{% block title_html %}
+	Login User
+{% endblock %}
+{% block h1 %}
+	Login
+{% endblock %}
+{% block article_content %}
+	{% if user.is_authenticated %}
+		<h1> hi {{ user }}</h1>
+	{% else %}
+		<h1>Connexion</h1>
+		<form method="post" action="{% url  'Bot:login_user_bot' %}">
+			{% csrf_token %}
+			<table>
+				{{ form.as_table }}
+			</table>
+			<input type="submit" class="button" value="Login" />
+		</form>
+	{% endif %}
+{% endblock %}

@@ -5,8 +5,10 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
     #url(r'^rule/list$', AlertList.as_view(),name="list_rule"),
     #url(r'^subreddit/list$', AlertList.as_view(),name="list_subreddit"),
-
+    
     url(r'^$', 'Bot.views.index.page', name="index"),
+    url(r'^login$', 'Bot.views.connection.login.page', name="login_user_bot"),
+    url(r'^logout$', 'Bot.views.connection.logout.page', name="logout_user_bot"),
     url(r'^subreddit/create$', 'Bot.views.subreddit.create.page',name="create_subreddit"),
     url(r'^rule/create$', 'Bot.views.rule.create.page',name="create_rule"),
     url(r'^alert/create$', 'Bot.views.alert.create.page',name="create_alert"),

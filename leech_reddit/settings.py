@@ -25,7 +25,7 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
-
+LOGIN_URL = 'Bot:login_user_bot'
 
 # Application definition
 
